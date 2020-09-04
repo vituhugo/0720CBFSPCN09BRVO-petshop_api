@@ -10,7 +10,14 @@ router.get('/', function(req, res, next) {
 router.get('/:id', function(req, res, next) {
     const id = req.params.id;
     console.log("ID DA REQUISICAO:", id);
-    res.render('dono/show');
-});
     
+    let dono = donos.find(dono => dono.id == id);
+    console.log("DONO:", dono);
+    
+    res.render('dono/show', {dono});
+});
+
+router.get('/:id/editar', function(req, res, next) {
+    res.render('dono/editar');
+});
 module.exports = router;
