@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
+var methodOverride = require('method-override');
 var indexRouter = require('./routes/index');
 var petRouter = require('./routes/pet');
 var donoRouter = require('./routes/dono');
@@ -25,7 +25,8 @@ app.use('/', indexRouter);
 app.use('/pet', petRouter);
 app.use('/dono', donoRouter);
 app.use('/users', usersRouter);
-
+app.use(methodOverride('X-HTTP-Method-Override'));
+app.use(methodOverride('_method'));
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

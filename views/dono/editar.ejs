@@ -10,11 +10,30 @@
     <%- include('./../partials/header') %>
     <div class="container mt-3">
         <h2>Editar Dono</h2>
-        <div class="row">
-            <div class="col-6">
-                
+        <form method="POST" action="/dono/<%= dono.id %>/alterar">
+            <div class="row">
+                <label class="form-group col-12">
+                    <span class="form-label">Nome</span>
+                    <input class="form-control" type="text" name="nome" value="<%= dono.nome %>" />
+                </label>
             </div>
-        </div>
+            <div class="row">
+                <label class="form-group col-12">
+                    <span class="form-label">Email</span>
+                    <input class="form-control" type="email" name="email" value="<%= dono.email %>"  />
+                </label>
+            </div>
+            <div class="row">
+                <label class="form-group col-12">
+                    <span class="form-label">Data de nascimento</span>
+                    <input class="form-control" type="text" name="data_nascimento" value="<%= dono.data_nascimento %>"  />
+                </label>
+            </div>
+            
+            <p class="text-right mt-3">
+                <button class="btn btn-primary">Enviar</button>
+            </p>
+        </form>
     </div>
     
 </body>
