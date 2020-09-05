@@ -3,7 +3,7 @@ module.exports = [
 		"id": 1,
 		"nome": "Gabriel Bowen",
 		"data_nascimento": "01/09/20",
-		"email": "consequat.enim@Sed.ca"
+        "email": "consequat.enim@Sed.ca",
 	},
 	{
 		"id": 2,
